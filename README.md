@@ -129,6 +129,6 @@ Edit
 **Shashwat Khandelwal**  
 🎓 B.Tech Computer Science Student | 💻 MERN Stack Developer  
 🔗 [GitHub](https://github.com/SHASHWAT13244)  
-🔗 [LinkedIn](https://www.linkedin.com/in/shashwatkhandelwal/)
+🔗 [LinkedIn](https://www.linkedin.com/in/shashwat-khandelwal-a0564532b/)
 
 > "MERN Notes App reflects my commitment to building secure, responsive, and user-focused full-stack applications."
