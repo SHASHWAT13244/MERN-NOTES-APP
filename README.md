@@ -1,9 +1,16 @@
 # 📝 MERN Notes App – Organize Your Thoughts, Effortlessly  
 **MongoDB • Express • React • Node.js • JWT Auth • Responsive Design**  
-🔗 **Live Demo**: [mern-notes-app-n73g.onrender.com](https://mern-notes-app-n73g.onrender.com)  
-🔗 **GitHub**: [github.com/SHASHWAT13244/MERN-NOTES-APP](https://github.com/SHASHWAT13244/MERN-NOTES-APP)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](#)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](#)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](#)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](#)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](#)
+[![Responsive Design](https://img.shields.io/badge/Responsive-Design-00C896?style=for-the-badge)](#)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-ff69b4?style=for-the-badge&logo=render)](https://mern-notes-app-n73g.onrender.com)
 
 A modern full-stack note-taking application that allows users to create, read, update, and delete personal notes securely — built with the MERN stack.
+
+
 
 ---
 
