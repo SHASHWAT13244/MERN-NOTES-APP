@@ -20,8 +20,7 @@ A modern full-stack note-taking application that allows users to create, read, u
 🛡️ JWT Authentication  
 📝 CRUD operations for notes  
 🔍 Real-time search functionality  
-📱 Fully responsive UI  
-🌙 Dark mode support  
+📱 Fully responsive UI    
 🧠 Clean React component structure  
 
 Built to demonstrate full-stack development with user authentication, RESTful APIs, and persistent storage.
@@ -45,8 +44,7 @@ Built to demonstrate full-stack development with user authentication, RESTful AP
 - Responsive search bar with instant filtering  
 
 ### 🧑‍💻 User Experience  
-- Responsive design (mobile-friendly)  
-- Light and dark theme support  
+- Responsive design (mobile-friendly)   
 - Clean and intuitive UI  
 
 ### 🛠️ Technical Stack  
