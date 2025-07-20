@@ -75,12 +75,6 @@ mern-notes-app/
 │ │ ├── context/ # Global state (Auth & Notes)
 │ │ └── App.js
 │ └── package.json
-│
-└── README.md
-
-yaml
-Copy
-Edit
 
 ---
 
