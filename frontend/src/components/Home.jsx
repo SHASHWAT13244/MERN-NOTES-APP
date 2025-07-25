@@ -30,7 +30,6 @@ const Home = () => {
           )
         : data;
       setNotes(filteredNotes);
-      console.log(data);
     } catch (err) {
       setError("Failed to fetch notes");
     }
@@ -44,6 +43,7 @@ const Home = () => {
   useEffect(() => {
     fetchNotes();
   }, [location.search]);
+
   const handleSaveNote = (newNote) => {
     if (editNote) {
       setNotes(
@@ -52,10 +52,10 @@ const Home = () => {
     } else {
       setNotes([...notes, newNote]);
     }
-
     setEditNote(null);
     setIsModalOpen(false);
   };
+
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
@@ -73,8 +73,12 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 min-h-screen bg-gray-500">
+    <div
+      className="container mx-auto px-4 py-8 min-h-screen"
+      style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
+    >
       {error && <p className="text-red-400 mb-4">{error}</p>}
+
       <NoteModal
         isOpen={isModalOpen}
         onClose={() => {
@@ -84,34 +88,57 @@ const Home = () => {
         note={editNote}
         onSave={handleSaveNote}
       />
+
+      {/* Floating add button */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gray-800 text-white text-3xl rounded-full shadow-lg hover:bg-gray-900 flex items-center justify-center"
+        className="fixed bottom-6 right-6 w-14 h-14 text-3xl rounded-full shadow-lg flex items-center justify-center"
+        style={{
+          backgroundColor: "var(--accent)",
+          color: "var(--bg)",
+          boxShadow: "0 0 10px var(--accent)",
+        }}
       >
-        <span className="flex items-center justify-center h-full w-full pb-1">
-          +
-        </span>
+        +
       </button>
+
+      {/* Notes Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {notes.map((note) => (
-          <div className="bg-gray-800 p-4 rounded-lg shadow-md" key={note._id}>
-            <h3 className="text-lg font-medium text-white mb-2">
-              {note.title}
-            </h3>
-            <p className="text-gray-300 mb-4">{note.description}</p>
-            <p className="text-sm text-gray-400 mb-4">
+          <div
+            key={note._id}
+            className="p-4 rounded-lg shadow-md"
+            style={{
+              backgroundColor: "var(--card-bg)",
+              color: "var(--text)",
+              border: "1px solid var(--border)",
+            }}
+          >
+            <h3 className="text-lg font-medium mb-2">{note.title}</h3>
+            <p className="mb-4" style={{ color: "var(--subtle-text)" }}>
+              {note.description}
+            </p>
+            <p className="text-sm mb-4" style={{ color: "var(--subtle-text)" }}>
               {new Date(note.updatedAt).toLocaleString()}
             </p>
             <div className="flex space-x-2">
               <button
                 onClick={() => handleEdit(note)}
-                className="bg-yellow-600 text-white px-3 py-1 rounded-md hover:bg-yellow-700"
+                className="px-3 py-1 rounded-md"
+                style={{
+                  backgroundColor: "var(--button-yellow)",
+                  color: "#fff",
+                }}
               >
                 Edit
               </button>
               <button
                 onClick={() => handleDelete(note._id)}
-                className="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700"
+                className="px-3 py-1 rounded-md"
+                style={{
+                  backgroundColor: "var(--button-red)",
+                  color: "#fff",
+                }}
               >
                 Delete
               </button>
