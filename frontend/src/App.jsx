@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
 import { Routes, Route, Navigate } from "react-router-dom";
+import axios from "axios";
+
+// Components
+import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import axios from "axios";
+
+// Theme Provider
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,6 +32,7 @@ function App() {
     };
     fetchUser();
   }, []);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
@@ -34,21 +40,27 @@ function App() {
       </div>
     );
   }
+
   return (
-    <div className="min-h-screen bg-gray-500">
-      <Navbar user={user} setUser={setUser} />
-      <Routes>
-        <Route
-          path="/login"
-          element={user ? <Navigate to="/" /> : <Login setUser={setUser} />}
-        />
-        <Route
-          path="/register"
-          element={user ? <Navigate to="/" /> : <Register setUser={setUser} />}
-        />
-        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
-      </Routes>
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen">
+        <Navbar user={user} setUser={setUser} />
+        <Routes>
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/" /> : <Login setUser={setUser} />}
+          />
+          <Route
+            path="/register"
+            element={user ? <Navigate to="/" /> : <Register setUser={setUser} />}
+          />
+          <Route
+            path="/"
+            element={user ? <Home /> : <Navigate to="/login" />}
+          />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 
